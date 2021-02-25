@@ -1,0 +1,23 @@
+name: Lint Code Base
+
+on:
+  push:
+    branches-ignore:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  shellcheck:
+    name: Shellcheck
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Run ShellCheck
+        uses: ludeeus/action-shellcheck@1.0.0
+        env:
+          SHELLCHECK_OPTS: -s sh
+        with:
+          severity: style
