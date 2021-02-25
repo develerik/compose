@@ -19,7 +19,7 @@ docker-compose wrapper for easy management
 
 ## Installation
 
-Just copy the `compose.sh` script somewhere in your `PATH` and enjoy.
+Just clone this repository and enjoy.
 
 ### Dependencies
 
@@ -29,7 +29,7 @@ Just copy the `compose.sh` script somewhere in your `PATH` and enjoy.
 ## Usage
 
 ```shell script
-compose --help
+./compose.sh --help
 ```
 
 ## Support
