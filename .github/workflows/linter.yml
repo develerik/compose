@@ -9,15 +9,19 @@ on:
       - main
 
 jobs:
-  shellcheck:
-    name: Shellcheck
+  build:
+    name: Lint Code Base
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      - name: Run ShellCheck
-        uses: ludeeus/action-shellcheck@1.0.0
+      - name: Lint Code Base
+        uses: github/super-linter@v3
         env:
-          SHELLCHECK_OPTS: -s sh
-        with:
-          severity: style
+          VALIDATE_ALL_CODEBASE: false
+          VALIDATE_MD: true
+          VALIDATE_YAML: true
+          VALIDATE_PYTHON: true
+          VALIDATE_PYTHON_PYLINT: true
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

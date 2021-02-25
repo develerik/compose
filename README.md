@@ -25,11 +25,12 @@ Just clone this repository and enjoy.
 
 - docker
 - docker-compose
+- python3
 
 ## Usage
 
 ```shell script
-./compose.sh --help
+./compose.py --help
 ```
 
 ## Support
@@ -43,7 +44,12 @@ more people can benefit from it.
 
 ## Roadmap
 
-No changes are currently planned.
+- Add command to create new stacks
+- Add command to delete existing stacks
+- Handle definitions folder not existing
+- Better usage for `ls` and `ps` commands
+
+<!--No changes are currently planned.-->
 
 ## Contributing
 
