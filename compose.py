@@ -12,12 +12,12 @@ class Compose(object):
         parser = argparse.ArgumentParser(description='docker-compose wrapper for easy management')
         parser.version = '0.1.0'
         parser.add_argument('stack', type=str, help='docker stack to manage')
-        parser.add_argument('commands', nargs='*', help='docker-compose commands')
-        parser.add_argument('-d', metavar='path', type=str, default='~/.docker/definitions',
+        parser.add_argument('--src', metavar='path', type=str, default='~/.docker/definitions',
                             help='stack definitions folder')
         parser.add_argument('--version', action='version')
+        parser.add_argument('commands', nargs=argparse.REMAINDER, help='docker-compose commands')
         args = parser.parse_args()
-        definitions_path = os.path.expanduser(args.d)
+        definitions_path = os.path.expanduser(args.src)
 
         if args.stack == "ps":
             states = self.get_stack_states(definitions_path)
