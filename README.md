@@ -25,7 +25,7 @@ Just clone this repository and enjoy.
 
 - docker
 - docker-compose
-- python3
+- python3 (>=3.8)
 
 ## Usage
 
@@ -44,12 +44,7 @@ more people can benefit from it.
 
 ## Roadmap
 
-- Add command to create new stacks
-- Add command to delete existing stacks
-- Handle definitions folder not existing
-- Better usage for `ls` and `ps` commands
-
-<!--No changes are currently planned.-->
+No changes are currently planned.
 
 ## Contributing
 
