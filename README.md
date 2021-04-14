@@ -3,6 +3,11 @@
 [![license](https://img.shields.io/github/license/develerik/compose.svg)](LICENSE)
 [![Code Style](https://github.com/develerik/compose/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/develerik/compose/actions?query=workflow%3A%22Lint+Code+Base%22)
 
+**BREAKING CHANGE**  
+For this version of `compose` to work you'll need to install the latest technical preview of the docker cli.
+Only this version of docker cli supports the new `docker compose` command.
+
+
 docker-compose wrapper for easy management
 
 ## Table of Contents
@@ -24,7 +29,6 @@ Just clone this repository and enjoy.
 ### Dependencies
 
 - docker
-- docker-compose
 - python3 (>=3.8)
 
 ## Usage

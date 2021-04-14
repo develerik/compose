@@ -9,7 +9,7 @@ from subprocess import run
 from typing import Final
 
 
-VERSION: Final = "0.2.0"
+VERSION: Final = "0.3.0"
 
 
 def parse_arguments():
@@ -17,7 +17,7 @@ def parse_arguments():
 
     :return: The parsed command line arguments.
     """
-    parser = argparse.ArgumentParser(description="docker-compose wrapper for easy management")
+    parser = argparse.ArgumentParser(description="'docker compose' wrapper for easy management")
     parser.version = VERSION
     parser.add_argument("--src", type=str, default="~/.docker/definitions", help="stack definitions source path")
     parser.add_argument("--version", action="version")
@@ -29,7 +29,7 @@ def parse_arguments():
     group.add_argument("--spec", action="store_true", help="show the stack definition")
 
     parser.add_argument("stack", type=str, help="docker stack to manage")
-    parser.add_argument("commands", nargs=argparse.REMAINDER, help="docker-compose commands")
+    parser.add_argument("commands", nargs=argparse.REMAINDER, help="'docker compose' commands")
 
     parsed_args = parser.parse_args()
 
@@ -116,7 +116,7 @@ def run_docker_compose(path: str, name: str, commands):
     :param commands: The commands to run.
     """
     docker_args = ["-f", path, "-p", name, *commands]
-    run(["docker-compose", *docker_args])
+    run(["docker", "compose", *docker_args])
 
 
 if __name__ == "__main__":
